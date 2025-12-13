@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QStandardItemModel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -18,5 +19,8 @@ class MainWindow : public QMainWindow {
 
    private:
     Ui::MainWindow* ui;
+    QStandardItemModel* model;
+
+    void InitModel();
 };
 #endif  // MAINWINDOW_H
