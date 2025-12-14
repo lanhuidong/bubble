@@ -15,6 +15,7 @@ list(APPEND CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR})
 include(${CMAKE_SOURCE_DIR}/cmake/conan.cmake)
 
 conan_cmake_configure(REQUIRES libusb/1.0.29
+                      REQUIRES spdlog/1.16.0
                       GENERATORS CMakeDeps
                       GENERATORS CMakeToolchain
                       IMPORTS "bin, *.dll -> ./bin"
@@ -27,6 +28,8 @@ conan_cmake_install(PATH_OR_REFERENCE .
 
 find_package(Qt6 REQUIRED COMPONENTS Core Widgets Gui)
 find_package(libusb REQUIRED)
+find_package(spdlog REQUIRED)
+
 qt_standard_project_setup()
 
 add_subdirectory(src/app)

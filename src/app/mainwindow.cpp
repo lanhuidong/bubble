@@ -3,10 +3,13 @@
 #include <QStandardItem>
 
 #include "./ui_mainwindow.h"
+#include "usb_tool.h"
 
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     InitModel();
+    UsbTool tool;
+    tool.Search();
 }
 
 MainWindow::~MainWindow() {
